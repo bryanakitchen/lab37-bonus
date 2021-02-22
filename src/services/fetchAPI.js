@@ -3,9 +3,9 @@ export const getUser = (username) => {
     .then(res => res.json())
     .then(json => ({
       username: json.login,
-      Name: json.name,
-      Followers: json.followers,
-      Following: json.following,
-      Profile: json.html_url
+      name: json.name,
+      followers: json.followers,
+      following: json.following,
+      profile: json.html_url
     }));
 };

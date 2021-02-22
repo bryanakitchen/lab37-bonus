@@ -4,14 +4,14 @@ import UserTemplate from './UserTemplate';
 
 export default function Search() {
   const [name, setName] = useState('');
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState({});
 
   const handleSubmit = e => {
     e.preventDefault();
 
     getUser(name)
-      .then(res => setResult(res));
-
+      .then(result => setResult(result));
+      
     setName('');
   };
 

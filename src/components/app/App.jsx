@@ -4,7 +4,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import User from '../../containers/User';
+import Search from '../user/Search';
 
 export default class App extends React.Component {
   render() {
@@ -12,12 +12,8 @@ export default class App extends React.Component {
       <>
         <Router>
           <Switch>
-            <Route exact path="/" component={User}
+            <Route exact path="/" component={Search}
             />
-            {/* <Route
-              exact path="/:username" 
-              component={}
-            /> */}
           </Switch>
         </Router>
       </>
