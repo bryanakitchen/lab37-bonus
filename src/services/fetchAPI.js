@@ -30,10 +30,3 @@ export const getPullsByUser = (username) => {
       pullData: json.items
     }));
 };
-
-// pullData: json.items.map(data => ({
-//   url: data.url,
-//   title: data.title,
-//   state: data.state,
-//   pr: data.pull_request.url,
-// }))
