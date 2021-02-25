@@ -9,3 +9,30 @@ export const getUser = (username) => {
       profile: json.html_url
     }));
 };
+
+export const getReposByUser = (username) => {
+  return fetch(`https://api.github.com/users/${username}/repos`)
+    .then(res => res.json())
+    .then(json => json.map(repo => ({
+      repo: repo.name,
+      repo_path: repo.full_name,
+      description: repo.description,
+      link: repo.url
+    })));
+};
+
+export const getPullsByUser = (username) => {
+  return fetch(`
+  https://api.github.com/search/issues?q=is:pr+author:${username}`)
+    .then(res => res.json());
+};
+
+// .then(json => ({
+//   total: json.total_count,
+//   json.map(item => ({
+//     url: item.url,
+//     title: item.title,
+//     state: item.state,
+//     pr: item.pull_request.url,
+//   }))
+// }));
