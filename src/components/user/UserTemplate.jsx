@@ -14,7 +14,7 @@ export default function UserTemplate({ result }) {
 }
 
 UserTemplate.propTypes = {
-  result: PropTypes.objectOf({
+  result: PropTypes.shape({
     username: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     followers: PropTypes.number.isRequired,

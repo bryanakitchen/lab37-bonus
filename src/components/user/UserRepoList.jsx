@@ -27,7 +27,8 @@ UserRepoList.propTypes = {
     PropTypes.shape({
       repo: PropTypes.string.isRequired,
       repo_path: PropTypes.string.isRequired,
-      description: PropTypes.string
+      description: PropTypes.string,
+      link: PropTypes.string.isRequired
     }).isRequired
   )
 };

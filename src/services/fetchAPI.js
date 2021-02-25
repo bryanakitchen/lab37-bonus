@@ -24,15 +24,16 @@ export const getReposByUser = (username) => {
 export const getPullsByUser = (username) => {
   return fetch(`
   https://api.github.com/search/issues?q=is:pr+author:${username}`)
-    .then(res => res.json());
+    .then(res => res.json())
+    .then(json => ({
+      total: json.total_count,
+      pullData: json.items
+    }));
 };
 
-// .then(json => ({
-//   total: json.total_count,
-//   json.map(item => ({
-//     url: item.url,
-//     title: item.title,
-//     state: item.state,
-//     pr: item.pull_request.url,
-//   }))
-// }));
+// pullData: json.items.map(data => ({
+//   url: data.url,
+//   title: data.title,
+//   state: data.state,
+//   pr: data.pull_request.url,
+// }))
